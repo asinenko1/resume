@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anastasiia Sinenko — Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a10;
+    --bg-soft:#101018;
+    --card:#15151f;
+    --card-border:rgba(255,255,255,0.08);
+    --text:#eef0f6;
+    --text-dim:#9a9db0;
+    --text-faint:#6c6f82;
+    --accent:#8b7bff;
+    --accent2:#22d3ee;
+    --accent-soft:rgba(139,123,255,0.12);
+    --radius:18px;
+    --maxw:920px;
+    --font: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    background:
+      radial-gradient(circle at 15% -10%, rgba(139,123,255,0.22), transparent 45%),
+      radial-gradient(circle at 90% 10%, rgba(34,211,238,0.14), transparent 40%),
+      radial-gradient(circle at 50% 100%, rgba(139,123,255,0.10), transparent 50%);
+    pointer-events:none;
+    z-index:0;
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px; position:relative; z-index:1;}
+
+  /* NAV */
+  header{
+    position:sticky; top:0; z-index:50;
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    background:rgba(10,10,16,0.65);
+    border-bottom:1px solid var(--card-border);
+  }
+  nav{
+    max-width:var(--maxw); margin:0 auto; padding:16px 24px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .logo{font-weight:800; letter-spacing:0.02em; font-size:1.05rem; cursor:pointer;}
+  .logo span{background:linear-gradient(120deg, var(--accent), var(--accent2)); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .nav-links{display:flex; gap:28px; list-style:none;}
+  .nav-links a{color:var(--text-dim); text-decoration:none; font-size:0.92rem; font-weight:600; transition:color .2s;}
+  .nav-links a:hover{color:var(--text);}
+  .nav-right{display:flex; align-items:center; gap:14px;}
+  .lang-toggle{
+    display:flex; background:var(--card); border:1px solid var(--card-border); border-radius:999px; padding:3px; gap:2px;
+  }
+  .lang-toggle button{
+    border:none; background:transparent; color:var(--text-dim); font-family:var(--font);
+    font-weight:700; font-size:0.78rem; padding:6px 12px; border-radius:999px; cursor:pointer; transition:all .2s;
+  }
+  .lang-toggle button.active{background:linear-gradient(120deg, var(--accent), var(--accent2)); color:#0a0a10;}
+  .menu-btn{display:none; background:none; border:none; color:var(--text); font-size:1.4rem; cursor:pointer;}
+
+  @media (max-width:720px){
+    .nav-links{
+      position:fixed; top:64px; left:0; right:0; background:var(--bg-soft);
+      border-bottom:1px solid var(--card-border);
+      flex-direction:column; padding:18px 24px; gap:16px;
+      transform:translateY(-130%); transition:transform .3s ease; z-index:40;
+    }
+    .nav-links.open{transform:translateY(0);}
+    .menu-btn{display:block;}
+  }
+
+  /* SECTIONS */
+  section{padding:88px 0;}
+  section:first-of-type{padding-top:64px;}
+  .eyebrow{
+    display:inline-block; font-size:0.78rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--accent2); margin-bottom:14px;
+  }
+  h1{font-size:clamp(2.2rem, 5vw, 3.4rem); font-weight:800; line-height:1.1; letter-spacing:-0.02em;}
+  h2{font-size:clamp(1.5rem, 3vw, 2rem); font-weight:800; letter-spacing:-0.01em; margin-bottom:36px;}
+  .grad-text{background:linear-gradient(120deg, var(--accent), var(--accent2)); -webkit-background-clip:text; background-clip:text; color:transparent;}
+
+  /* HERO */
+  .hero{padding-top:90px; padding-bottom:70px;}
+  .hero-role{color:var(--text-dim); font-size:1.15rem; font-weight:600; margin-top:14px;}
+  .hero-desc{max-width:620px; color:var(--text-dim); font-size:1.02rem; margin-top:22px;}
+  .hero-actions{display:flex; flex-wrap:wrap; gap:14px; margin-top:34px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border-radius:12px;
+    text-decoration:none; font-weight:700; font-size:0.92rem; transition:transform .2s, box-shadow .2s; border:1px solid transparent;
+  }
+  .btn-primary{background:linear-gradient(120deg, var(--accent), var(--accent2)); color:#0a0a10; box-shadow:0 8px 30px -8px rgba(139,123,255,0.6);}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{background:var(--card); color:var(--text); border-color:var(--card-border);}
+  .btn-ghost:hover{border-color:rgba(255,255,255,0.25); transform:translateY(-2px);}
+  .btn-icon{padding:12px 16px; font-size:1.1rem; line-height:1;}
+
+  /* ABOUT */
+  .about-text{color:var(--text-dim); font-size:1.02rem; max-width:720px;}
+
+  /* SKILLS */
+  .skills-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:16px;}
+  .skill-card{
+    background:var(--card); border:1px solid var(--card-border); border-radius:var(--radius);
+    padding:22px; transition:border-color .2s, transform .2s;
+  }
+  .skill-card:hover{border-color:rgba(139,123,255,0.4); transform:translateY(-3px);}
+  .skill-card h3{font-size:0.98rem; font-weight:800; margin-bottom:12px;}
+  .tag-list{display:flex; flex-wrap:wrap; gap:8px;}
+  .tag{
+    background:var(--accent-soft); color:#c9c2ff; border:1px solid rgba(139,123,255,0.25);
+    font-size:0.8rem; font-weight:600; padding:5px 11px; border-radius:999px;
+  }
+
+  /* APPROACH */
+  .approach-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:16px;}
+  .approach-card{background:var(--card); border:1px solid var(--card-border); border-radius:var(--radius); padding:24px;}
+  .approach-card .ic{font-size:1.5rem; margin-bottom:10px; display:block;}
+  .approach-card h3{font-size:1rem; font-weight:800; margin-bottom:8px;}
+  .approach-card p{color:var(--text-dim); font-size:0.92rem;}
+
+  /* EXPERIENCE */
+  .timeline{position:relative; padding-left:28px; border-left:2px solid var(--card-border);}
+  .tl-item{position:relative; margin-bottom:40px;}
+  .tl-item:last-child{margin-bottom:0;}
+  .tl-item::before{
+    content:""; position:absolute; left:-34px; top:6px; width:12px; height:12px; border-radius:50%;
+    background:linear-gradient(120deg, var(--accent), var(--accent2)); box-shadow:0 0 0 4px var(--bg), 0 0 0 5px rgba(139,123,255,0.35);
+  }
+  .tl-header{display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 14px; margin-bottom:4px;}
+  .tl-role{font-size:1.08rem; font-weight:800;}
+  .tl-company{color:var(--accent2); font-weight:700; font-size:0.95rem;}
+  .tl-dates{color:var(--text-faint); font-size:0.82rem; font-weight:600; margin-bottom:14px;}
+  .tl-bullets{list-style:none; display:flex; flex-direction:column; gap:9px;}
+  .tl-bullets li{color:var(--text-dim); font-size:0.92rem; padding-left:18px; position:relative;}
+  .tl-bullets li::before{content:"—"; position:absolute; left:0; color:var(--accent);}
+
+  /* EDUCATION */
+  .edu-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:16px;}
+  .edu-card{background:var(--card); border:1px solid var(--card-border); border-radius:var(--radius); padding:22px;}
+  .edu-year{color:var(--accent2); font-weight:700; font-size:0.82rem; margin-bottom:8px;}
+  .edu-degree{font-weight:800; margin-bottom:4px;}
+  .edu-school{color:var(--text-dim); font-size:0.92rem;}
+  .edu-field{color:var(--text-faint); font-size:0.86rem; margin-top:6px;}
+
+  /* CONTACT / FOOTER */
+  .contact-section{text-align:center;}
+  .contact-links{display:flex; flex-wrap:wrap; justify-content:center; gap:14px; margin-top:30px;}
+  .contact-pill{
+    display:flex; align-items:center; gap:10px; background:var(--card); border:1px solid var(--card-border);
+    padding:12px 20px; border-radius:999px; color:var(--text); text-decoration:none; font-weight:600; font-size:0.92rem;
+    transition:transform .2s, border-color .2s;
+  }
+  .contact-pill:hover{transform:translateY(-2px); border-color:rgba(139,123,255,0.4);}
+  footer{padding:36px 0 50px; text-align:center; color:var(--text-faint); font-size:0.82rem;}
+
+  .fade-in{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .fade-in.visible{opacity:1; transform:translateY(0);}
+
+  .lang-hidden{display:none !important;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})"><span>AS</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#skills" data-lang="ru">Навыки</a><a href="#skills" data-lang="en">Skills</a></li>
+      <li><a href="#experience" data-lang="ru">Опыт</a><a href="#experience" data-lang="en">Experience</a></li>
+      <li><a href="#approach" data-lang="ru">Подход</a><a href="#approach" data-lang="en">Approach</a></li>
+      <li><a href="#education" data-lang="ru">Образование</a><a href="#education" data-lang="en">Education</a></li>
+      <li><a href="#contact" data-lang="ru">Контакты</a><a href="#contact" data-lang="en">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button id="btn-ru" onclick="setLang('ru')">RU</button>
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="menu-btn" id="menuBtn" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero fade-in">
+    <div class="eyebrow" data-lang="ru">Резюме</div>
+    <div class="eyebrow" data-lang="en">Resume</div>
+    <h1>
+      <span data-lang="ru">Анастасия <span class="grad-text">Синенко</span></span>
+      <span data-lang="en">Anastasiia <span class="grad-text">Sinenko</span></span>
+    </h1>
+    <div class="hero-role" data-lang="ru">Бизнес-ассистент и менеджер проектов</div>
+    <div class="hero-role" data-lang="en">Executive Assistant / Project Manager</div>
+    <p class="hero-desc" data-lang="ru">Работаю на стыке операционных процессов, аналитики, технологий и контента. 3 года опыта в координации команд, отчётности, аналитике и создании контента. Использую нейросети в ежедневной работе и быстро адаптируюсь к новым задачам и рынкам.</p>
+    <p class="hero-desc" data-lang="en">Executive Assistant and Project Manager with 3 years of experience across operations, analytics, project coordination, content, and executive support. I work well in fast-changing environments, structure information quickly, coordinate teams and processes, and use AI tools to improve daily workflows.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="mailto:sinenko.anastasiya@gmail.com">
+        <span data-lang="ru">Написать мне</span><span data-lang="en">Get in touch</span>
+      </a>
+      <a class="btn btn-ghost btn-icon" href="https://t.me/asinoptic1" target="_blank" rel="noopener" aria-label="Telegram">
+        <svg width="20" height="20" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><linearGradient id="tgGradHero" x1="0.66" x2="0.42" y1="0.17" y2="0.75">
+            <stop offset="0" stop-color="#37aee2"/><stop offset="1" stop-color="#1e96c8"/>
+          </linearGradient></defs>
+          <circle cx="120" cy="120" r="120" fill="url(#tgGradHero)"/>
+          <path fill="#c8daea" d="M98 175c-3.888 0-3.227-1.468-4.568-5.17L82 132.207 154 88"/>
+          <path fill="#a9c9dd" d="M98 175c3 0 4.325-1.372 6-3l16-15.558-19.958-12.035"/>
+          <path fill="#fff" d="M100.04 144.41l48.36-43.53c2.14-1.9-.46-2.8-3.27-1.13l-59.78 37.62-25.76-8.28c-5.6-1.7-5.62-5.6 1.23-8.28l100.4-38.68c4.66-1.98 9.14 1.13 7.33 8.28l-17.12 80.65c-1.2 5.51-4.5 6.85-9.12 4.27l-25.2-18.58-12.16 11.7c-1.35 1.36-2.48 2.5-5.08 2.5z"/>
+        </svg>
+      </a>
+      <a class="btn btn-ghost" href="#experience">
+        <span data-lang="ru">Смотреть опыт</span><span data-lang="en">View experience</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="fade-in">
+    <h2><span data-lang="ru">Навыки</span><span data-lang="en">Skills</span></h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3 data-lang="ru">Инструменты</h3><h3 data-lang="en">Tools</h3>
+        <div class="tag-list">
+          <span class="tag">Notion</span><span class="tag">Bitrix24</span><span class="tag">amoCRM</span>
+          <span class="tag">Figma</span><span class="tag">Yougile</span><span class="tag">Trello</span>
+          <span class="tag">MS Office</span><span class="tag">Google Workspace</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3 data-lang="ru">Операционная деятельность</h3><h3 data-lang="en">Operations</h3>
+        <div class="tag-list">
+          <span class="tag" data-lang="ru">Постановка и трекинг задач</span><span class="tag" data-lang="en">Task tracking</span>
+          <span class="tag" data-lang="ru">Отчётность</span><span class="tag" data-lang="en">Reporting</span>
+          <span class="tag" data-lang="ru">Координация встреч</span><span class="tag" data-lang="en">Meeting coordination</span>
+          <span class="tag" data-lang="ru">Регламенты процессов</span><span class="tag" data-lang="en">Process documentation</span>
+          <span class="tag" data-lang="ru">Партнёрская база</span><span class="tag" data-lang="en">Partner database</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3 data-lang="ru">Аналитика и управление</h3><h3 data-lang="en">Analytics &amp; Management</h3>
+        <div class="tag-list">
+          <span class="tag" data-lang="ru">Анализ рынка</span><span class="tag" data-lang="en">Market research</span>
+          <span class="tag" data-lang="ru">Медиапланирование</span><span class="tag" data-lang="en">Media planning</span>
+          <span class="tag" data-lang="ru">KPI и бюджет</span><span class="tag" data-lang="en">KPI &amp; budget tracking</span>
+          <span class="tag" data-lang="ru">Инвестиционные отчёты</span><span class="tag" data-lang="en">Investment reports</span>
+          <span class="tag" data-lang="ru">Управление проектами</span><span class="tag" data-lang="en">Project management</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3 data-lang="ru">Контент и коммуникации</h3><h3 data-lang="en">Content &amp; Communications</h3>
+        <div class="tag-list">
+          <span class="tag" data-lang="ru">Копирайтинг</span><span class="tag" data-lang="en">Copywriting</span>
+          <span class="tag" data-lang="ru">Редактура</span><span class="tag" data-lang="en">Editing</span>
+          <span class="tag" data-lang="ru">SEO-оптимизация</span><span class="tag" data-lang="en">SEO optimization</span>
+          <span class="tag" data-lang="ru">Контент-стратегии</span><span class="tag" data-lang="en">Content strategy</span>
+          <span class="tag" data-lang="ru">Telegram-каналы</span><span class="tag" data-lang="en">Telegram channels</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3 data-lang="ru">ИИ и технологии</h3><h3 data-lang="en">AI &amp; Tech</h3>
+        <div class="tag-list">
+          <span class="tag">ChatGPT</span><span class="tag">Claude</span>
+          <span class="tag" data-lang="ru">Базовый Python и SQL</span><span class="tag" data-lang="en">Basic Python &amp; SQL</span>
+          <span class="tag" data-lang="ru">Работа с данными</span><span class="tag" data-lang="en">Data workflows</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="fade-in">
+    <h2><span data-lang="ru">Опыт работы</span><span data-lang="en">Experience</span></h2>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-header">
+          <span class="tl-role" data-lang="ru">Бизнес-ассистент</span><span class="tl-role" data-lang="en">Business Assistant</span>
+          <span class="tl-company">Clean Clinic</span>
+        </div>
+        <div class="tl-dates" data-lang="ru">Апрель 2026 — настоящее время</div>
+        <div class="tl-dates" data-lang="en">April 2026 — Present</div>
+        <ul class="tl-bullets">
+          <li data-lang="ru">Выстроила регулярный контроль задач между отделами продаж, запуска, партнёрского сопровождения, HR и медицинским направлением в Bitrix24.</li>
+          <li data-lang="en">Built a regular task-tracking process across Sales, Launch, Partner Support, HR, and the Medical department in Bitrix24.</li>
+          <li data-lang="ru">Усилила контроль финансовых показателей партнёрской сети: сверяю «План/Факт» по роялти, выявляю просрочки, взаимодействую с бухгалтером.</li>
+          <li data-lang="en">Strengthened financial control over the partner network: reconciling Plan vs. Actual royalty payments and coordinating with the accountant on overdue payments.</li>
+          <li data-lang="ru">Систематизировала работу с партнёрской базой: веду и актуализирую реестры, проверяю корректность данных.</li>
+          <li data-lang="en">Systematized partner database management: maintaining and updating registries, verifying data accuracy.</li>
+          <li data-lang="ru">Готовлю презентации, регламенты и материалы для встреч с отделами, врачами и медицинским директором.</li>
+          <li data-lang="en">Prepare presentations, guidelines, and materials for meetings with departments, doctors, and the medical director.</li>
+          <li data-lang="ru">Пишу и редактирую экспертные статьи для сайта компании, повышая трафик и доверие к бренду.</li>
+          <li data-lang="en">Write and edit expert articles for the company website to grow traffic and build brand trust.</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-header">
+          <span class="tl-role">Executive Assistant</span>
+          <span class="tl-company">V3V Ventures</span>
+        </div>
+        <div class="tl-dates" data-lang="ru">Ноябрь 2023 — настоящее время</div>
+        <div class="tl-dates" data-lang="en">November 2023 — Present</div>
+        <ul class="tl-bullets">
+          <li data-lang="ru">Провела аналитику рынков недвижимости Дубая и Барселоны, подготовила инвестиционные отчёты для высокобюджетных сделок.</li>
+          <li data-lang="en">Conducted market research on the Dubai and Barcelona real estate markets and prepared investment reports for high-budget deals.</li>
+          <li data-lang="ru">Инициировала переговоры и заключение партнёрских соглашений с 7 новыми инвестиционными проектами.</li>
+          <li data-lang="en">Initiated negotiations and helped close partnership agreements with 7 new investment projects.</li>
+          <li data-lang="ru">Организовала 20+ встреч с ключевыми партнёрами и предпринимателями, ускоряя выход на сделки.</li>
+          <li data-lang="en">Organized 20+ meetings with key partners and entrepreneurs, accelerating deal flow.</li>
+          <li data-lang="ru">Выполняла личные и деловые поручения собственника, обеспечивая фокус руководителя на стратегических задачах.</li>
+          <li data-lang="en">Managed personal and business tasks for the company owner, keeping leadership focused on strategic priorities.</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-header">
+          <span class="tl-role" data-lang="ru">Ассистент коммерческого директора</span><span class="tl-role" data-lang="en">Assistant to Commercial Director</span>
+          <span class="tl-company">INMYROOM</span>
+        </div>
+        <div class="tl-dates">October 2023 — January 2025</div>
+        <ul class="tl-bullets">
+          <li data-lang="ru">Проводила ежемесячный мониторинг конкурентов в медиа, digital и e-commerce: ценообразование, рекламные стратегии, форматы размещения.</li>
+          <li data-lang="en">Conducted monthly competitor research across media, digital, and e-commerce: pricing, ad strategies, and placement formats.</li>
+          <li data-lang="ru">Разрабатывала медиапланы и презентации в PowerPoint и Google Slides с визуализацией данных, кейсами и прогнозами.</li>
+          <li data-lang="en">Developed media plans and client presentations in PowerPoint and Google Slides with data visualization and forecasts.</li>
+          <li data-lang="ru">Создавала отчёты в Excel и Google Sheets: автоматизировала трекинг KPI, бюджета и загрузки сотрудников.</li>
+          <li data-lang="en">Built Excel and Google Sheets reports, automating KPI, budget, and workload tracking.</li>
+          <li data-lang="ru">Контролировала задачи отдела из 5 человек в Trello и Yougile, следила за сроками и готовила отчёты о статусе.</li>
+          <li data-lang="en">Tracked tasks for a 5-person department in Trello and Yougile, monitoring deadlines and producing status reports.</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-header">
+          <span class="tl-role" data-lang="ru">SMM-менеджер</span><span class="tl-role" data-lang="en">SMM Manager</span>
+          <span class="tl-company">PlatiRublem.ru</span>
+        </div>
+        <div class="tl-dates">January 2024 — February 2025</div>
+        <ul class="tl-bullets">
+          <li data-lang="ru">Готовила статьи для Яндекс Дзена и SEO-адаптировала контент для роста видимости в поиске.</li>
+          <li data-lang="en">Prepared articles for Yandex Zen and SEO-adapted content to improve search visibility.</li>
+          <li data-lang="ru">Вела Telegram-канал PlatiRublem — рост подписчиков на 243%.</li>
+          <li data-lang="en">Managed the PlatiRublem Telegram channel — grew subscribers by 243%.</li>
+          <li data-lang="ru">Оптимизировала контент и анализировала эффективность — рост продаж в 2,5 раза за 9 месяцев.</li>
+          <li data-lang="en">Optimized content and analyzed performance — contributed to a 2.5x sales growth over 9 months.</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-header">
+          <span class="tl-role" data-lang="ru">Делопроизводитель</span><span class="tl-role" data-lang="en">Administrative Assistant</span>
+          <span class="tl-company" data-lang="ru">Университет ИТМО</span><span class="tl-company" data-lang="en">ITMO University</span>
+        </div>
+        <div class="tl-dates">September 2022 — December 2023</div>
+        <ul class="tl-bullets">
+          <li data-lang="ru">Вела Telegram-канал Лаборатории академического письма: контент увеличил посещаемость языковых курсов.</li>
+          <li data-lang="en">Managed the Academic Writing Lab's Telegram channel, growing attendance in language courses.</li>
+          <li data-lang="ru">Поддерживала учебную документацию по курсам в актуальном состоянии.</li>
+          <li data-lang="en">Maintained course documentation, keeping it accurate and up to date.</li>
+          <li data-lang="ru">Разработала контент-стратегию для ВК-группы «Ты нужен людям» — рост подписчиков на 25%, активности на 30%.</li>
+          <li data-lang="en">Developed a content plan for the "You Are Needed" VK community — grew followers by 25% and engagement by 30%.</li>
+          <li data-lang="ru">Администрировала сайт Управления студенческих инициатив, улучшив структуру контента.</li>
+          <li data-lang="en">Administered the Student Initiatives Department website, improving content structure.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section id="approach" class="fade-in">
+    <h2><span data-lang="ru">Мой подход</span><span data-lang="en">My approach</span></h2>
+    <div class="approach-grid">
+      <div class="approach-card">
+        <span class="ic">🎓</span>
+        <h3 data-lang="ru">Стремление к новому</h3><h3 data-lang="en">Always learning</h3>
+        <p data-lang="ru">Постоянно осваиваю новые технологии и подходы — от языков программирования до контент-менеджмента, — чтобы проекты были эффективнее.</p>
+        <p data-lang="en">Continuously picking up new tools and approaches — from programming languages to content management — to make projects more effective.</p>
+      </div>
+      <div class="approach-card">
+        <span class="ic">🛠</span>
+        <h3 data-lang="ru">Практичность</h3><h3 data-lang="en">Practical by default</h3>
+        <p data-lang="ru">Фокусируюсь на реалистичных и достижимых целях. От контент-планов до административных задач — каждый шаг улучшает процессы команды.</p>
+        <p data-lang="en">Focused on realistic, achievable goals. From content plans to admin tasks, every step is aimed at improving team processes.</p>
+      </div>
+      <div class="approach-card">
+        <span class="ic">📈</span>
+        <h3 data-lang="ru">От слов к делу</h3><h3 data-lang="en">From words to results</h3>
+        <p data-lang="ru">Мои тексты не просто информируют — они продают. Telegram-стратегия на PlatiRublem.ru дала рост продаж в 2,5 раза за 9 месяцев.</p>
+        <p data-lang="en">My content doesn't just inform — it sells. A Telegram strategy at PlatiRublem.ru drove 2.5x sales growth in 9 months.</p>
+      </div>
+      <div class="approach-card">
+        <span class="ic">🌟</span>
+        <h3 data-lang="ru">Аналитика с результатом</h3><h3 data-lang="en">Data-driven results</h3>
+        <p data-lang="ru">Глубокий анализ рынков — недвижимость, крипта, контент. Использую данные не для отчётов, а для решений с ощутимым результатом.</p>
+        <p data-lang="en">Deep market analysis — real estate, crypto, content. I use data to build decisions with a tangible business impact.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="fade-in">
+    <h2><span data-lang="ru">Образование</span><span data-lang="en">Education</span></h2>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-year">2019 — 2023</div>
+        <div class="edu-degree" data-lang="ru">Бакалавриат</div><div class="edu-degree" data-lang="en">Bachelor's Degree</div>
+        <div class="edu-school" data-lang="ru">Университет ИТМО</div><div class="edu-school" data-lang="en">ITMO University</div>
+        <div class="edu-field" data-lang="ru">Оптотехника</div><div class="edu-field" data-lang="en">Optical Engineering</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-year">2021 — 2023</div>
+        <div class="edu-degree" data-lang="ru">Профессиональная переподготовка</div><div class="edu-degree" data-lang="en">Professional Retraining</div>
+        <div class="edu-school" data-lang="ru">Университет ИТМО</div><div class="edu-school" data-lang="en">ITMO University</div>
+        <div class="edu-field" data-lang="ru">Технологии анализа данных</div><div class="edu-field" data-lang="en">Data Analysis Technologies</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-year">2022</div>
+        <div class="edu-degree" data-lang="ru">Программа обмена / повышение квалификации</div><div class="edu-degree" data-lang="en">Exchange Program</div>
+        <div class="edu-school" data-lang="ru">Университет Лейбница, Ганновер</div><div class="edu-school" data-lang="en">Leibniz University Hannover</div>
+        <div class="edu-field" data-lang="ru">Лазерные технологии и прикладная оптика</div><div class="edu-field" data-lang="en">Laser Technologies and Applied Optics</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="fade-in contact-section">
+    <h2 style="margin-bottom:10px;"><span data-lang="ru">Свяжитесь со мной</span><span data-lang="en">Get in touch</span></h2>
+    <p class="about-text" style="margin:0 auto;" data-lang="ru">Открыта к новым проектам и предложениям.</p>
+    <p class="about-text" style="margin:0 auto;" data-lang="en">Open to new projects and opportunities.</p>
+    <div class="contact-links">
+      <a class="contact-pill" href="tel:+79512458669">📞 +7 951 245 86 69</a>
+      <a class="contact-pill" href="mailto:sinenko.anastasiya@gmail.com">✉️ sinenko.anastasiya@gmail.com</a>
+      <a class="contact-pill" href="https://t.me/asinoptic1" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0;">
+          <defs><linearGradient id="tgGradContact" x1="0.66" x2="0.42" y1="0.17" y2="0.75">
+            <stop offset="0" stop-color="#37aee2"/><stop offset="1" stop-color="#1e96c8"/>
+          </linearGradient></defs>
+          <circle cx="120" cy="120" r="120" fill="url(#tgGradContact)"/>
+          <path fill="#c8daea" d="M98 175c-3.888 0-3.227-1.468-4.568-5.17L82 132.207 154 88"/>
+          <path fill="#a9c9dd" d="M98 175c3 0 4.325-1.372 6-3l16-15.558-19.958-12.035"/>
+          <path fill="#fff" d="M100.04 144.41l48.36-43.53c2.14-1.9-.46-2.8-3.27-1.13l-59.78 37.62-25.76-8.28c-5.6-1.7-5.62-5.6 1.23-8.28l100.4-38.68c4.66-1.98 9.14 1.13 7.33 8.28l-17.12 80.65c-1.2 5.51-4.5 6.85-9.12 4.27l-25.2-18.58-12.16 11.7c-1.35 1.36-2.48 2.5-5.08 2.5z"/>
+        </svg>
+        Telegram
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span data-lang="ru">© 2026 Анастасия Синенко</span>
+  <span data-lang="en">© 2026 Anastasiia Sinenko</span>
+</footer>
+
+<script>
+  function setLang(lang){
+    document.documentElement.setAttribute('data-current-lang', lang);
+    document.documentElement.setAttribute('lang', lang);
+    document.getElementById('btn-ru').classList.toggle('active', lang==='ru');
+    document.getElementById('btn-en').classList.toggle('active', lang==='en');
+    document.querySelectorAll('[data-lang]').forEach(el=>{
+      el.classList.toggle('lang-hidden', el.getAttribute('data-lang') !== lang);
+    });
+  }
+  setLang('ru');
+
+  // close mobile menu on link click
+  document.querySelectorAll('.nav-links a').forEach(a=>{
+    a.addEventListener('click', ()=> document.getElementById('navLinks').classList.remove('open'));
+  });
+
+  // scroll reveal
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.1});
+  document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
