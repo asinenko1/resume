@@ -7,7 +7,7 @@
 <meta name="description" content="Менеджер проектов и операционных процессов: контроль задач между отделами, финансовая дисциплина партнёрской сети, аналитика, AI и автоматизация. 3 года опыта.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Анастасия Синенко — Project & Operations Manager">
-<meta property="og:description" content="Выстраиваю процессы между командами и довожу их до измеримого результата: роялти ×3, продажи ×2,5, контроль задач 5 отделов.">
+<meta property="og:description" content="Выстраиваю процессы между командами и довожу их до измеримого результата: роялти ×3 по сети из 52 партнёров, AI-дашборд для руководителя, продажи ×2,5.">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:locale:alternate" content="en_US">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
@@ -120,7 +120,7 @@
 
   /* RESULTS STRIP */
   .results{
-    display:grid; grid-template-columns:repeat(4, 1fr); margin-top:52px;
+    display:grid; grid-template-columns:repeat(3, 1fr); margin-top:52px;
     border-top:1px solid var(--card-border); border-bottom:1px solid var(--card-border);
   }
   .result{padding:22px 18px 22px 0;}
@@ -128,11 +128,10 @@
   .result-num{font-size:1.9rem; font-weight:800; line-height:1.1; letter-spacing:-0.02em;}
   .result-label{color:var(--text-dim); font-size:0.84rem; margin-top:6px; line-height:1.45;}
   @media (max-width:720px){
-    .results{grid-template-columns:repeat(2, 1fr);}
-    .result{padding:18px 12px 18px 0;}
-    .result + .result{padding-left:12px;}
-    .result:nth-child(3){padding-left:0; border-left:none; border-top:1px solid var(--card-border);}
-    .result:nth-child(4){border-top:1px solid var(--card-border);}
+    .result{padding:18px 10px 18px 0;}
+    .result + .result{padding-left:10px;}
+    .result-num{font-size:1.5rem;}
+    .result-label{font-size:0.78rem;}
   }
 
   /* CASES */
@@ -181,6 +180,7 @@
   .tl-header{display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 14px; margin-bottom:4px;}
   .tl-role{font-size:1.08rem; font-weight:800;}
   .tl-company{color:var(--accent2); font-weight:700; font-size:0.95rem;}
+  .tl-about{color:var(--text-dim); font-size:0.86rem; margin-bottom:4px;}
   .tl-dates{color:var(--text-faint); font-size:0.82rem; font-weight:600; margin-bottom:14px;}
   .tl-bullets{list-style:none; display:flex; flex-direction:column; gap:9px;}
   .tl-bullets li{color:var(--text-dim); font-size:0.92rem; padding-left:18px; position:relative;}
@@ -250,8 +250,8 @@
     <div class="hero-role" data-lang="en">Project &amp; Operations Manager</div>
     <div class="hero-focus" data-lang="ru">Процессы, аналитика, AI и автоматизация</div>
     <div class="hero-focus" data-lang="en">Processes, analytics, AI and automation</div>
-    <p class="hero-desc" data-lang="ru">Выстраиваю процессы между командами и довожу их до измеримого результата: контроль задач между отделами, платёжная дисциплина партнёрской сети, отчётность и аналитика для руководителей. Инженерное образование ИТМО и переподготовка по анализу данных. Использую AI и автоматизацию, чтобы команды тратили меньше времени на рутину.</p>
-    <p class="hero-desc" data-lang="en">I build cross-team processes and drive them to measurable results: task control across departments, payment discipline in a partner network, reporting and analytics for leadership. Engineering degree from ITMO plus professional training in data analysis. I use AI and automation so teams spend less time on routine work.</p>
+    <p class="hero-desc" data-lang="ru">Выстраиваю процессы между командами и довожу их до измеримого результата: контроль задач между отделами, платёжная дисциплина партнёрской сети, отчётность и аналитика для руководителей. Инженерное образование ИТМО и переподготовка по анализу данных. С помощью AI собираю инструменты, которые избавляют от ручной рутины: например, единый дашборд с автоматической сверкой данных отделов.</p>
+    <p class="hero-desc" data-lang="en">I build cross-team processes and drive them to measurable results: task control across departments, payment discipline in a partner network, reporting and analytics for leadership. Engineering degree from ITMO plus professional training in data analysis. I use AI to build tools that remove manual routine, such as a unified dashboard that automatically cross-checks data from different departments.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="mailto:sinenko.anastasiya@gmail.com">
         <span data-lang="ru">Написать мне</span><span data-lang="en">Get in touch</span>
@@ -279,19 +279,15 @@
         <div class="result-label" data-lang="en">monthly royalty collections, Clean Clinic</div>
       </div>
       <div class="result">
+        <div class="result-num grad-text" data-lang="ru">20 мин</div>
+        <div class="result-num grad-text" data-lang="en">20 min</div>
+        <div class="result-label" data-lang="ru">на сбор цифр вместо ежедневной часовой планёрки</div>
+        <div class="result-label" data-lang="en">to compile figures, down from a daily 1-hour meeting</div>
+      </div>
+      <div class="result">
         <div class="result-num grad-text">×2,5</div>
         <div class="result-label" data-lang="ru">рост продаж за 9 месяцев, PlatiRublem</div>
         <div class="result-label" data-lang="en">sales growth in 9 months, PlatiRublem</div>
-      </div>
-      <div class="result">
-        <div class="result-num grad-text">7</div>
-        <div class="result-label" data-lang="ru">новых инвестиционных проектов, V3V Ventures</div>
-        <div class="result-label" data-lang="en">new investment projects, V3V Ventures</div>
-      </div>
-      <div class="result">
-        <div class="result-num grad-text">5</div>
-        <div class="result-label" data-lang="ru">отделов в единой системе контроля задач</div>
-        <div class="result-label" data-lang="en">departments in one task-control system</div>
       </div>
     </div>
   </section>
@@ -313,14 +309,38 @@
           <h3 data-lang="ru">Контроль платежей партнёрской сети</h3>
           <h3 data-lang="en">Payment control across the partner network</h3>
           <dl data-lang="ru">
-            <dt>Задача</dt><dd>Сделать платежи партнёров прозрачными для руководства и сократить просрочки по роялти.</dd>
+            <dt>Задача</dt><dd>Сделать платежи 52 партнёров франчайзинговой сети прозрачными для руководства и сократить просрочки по роялти.</dd>
             <dt>Что сделала</dt><dd>Ввела регулярную сверку «План/Факт», выявление просроченных платежей, работу с бухгалтером и регулярные отчёты руководителю о статусе оплат.</dd>
             <dt>Результат</dt><dd>Ежемесячные поступления роялти выросли со 100 до 300 тыс. ₽.</dd>
           </dl>
           <dl data-lang="en">
-            <dt>Goal</dt><dd>Make partner payments transparent for management and reduce overdue royalties.</dd>
+            <dt>Goal</dt><dd>Make payments from 52 franchise partners transparent for management and reduce overdue royalties.</dd>
             <dt>What I did</dt><dd>Introduced regular Plan vs. Actual reconciliation, overdue payment tracking, coordination with the accountant and regular payment-status reports to management.</dd>
             <dt>Result</dt><dd>Monthly royalty collections grew from RUB 100K to RUB 300K.</dd>
+          </dl>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-side">
+          <div class="case-metric grad-text" data-lang="ru">1 час → 20 мин</div>
+          <div class="case-metric grad-text" data-lang="en">1 hr → 20 min</div>
+          <div class="case-metric-label" data-lang="ru">ежедневно на сбор цифр для руководителя</div>
+          <div class="case-metric-label" data-lang="en">daily to compile figures for management</div>
+          <div class="case-company">Clean Clinic</div>
+        </div>
+        <div>
+          <h3 data-lang="ru">AI-дашборд с автоматической сверкой данных</h3>
+          <h3 data-lang="en">AI-built dashboard with automatic data checks</h3>
+          <dl data-lang="ru">
+            <dt>Задача</dt><dd>Цифры по продажам, маркетингу в России и за рубежом, финансам и партнёрам в работе собирались на ежедневной планёрке от часа: данные приходилось запрашивать у каждого руководителя отдельно.</dd>
+            <dt>Что сделала</dt><dd>С помощью AI построила в Google Sheets единый дашборд, который автоматически подтягивает данные из таблиц 4 отделов. Встроила проверки: подсвечиваются незаполненные даты в записях отдела продаж и просроченные платежи партнёров.</dd>
+            <dt>Результат</dt><dd>Сбор цифр сократился с часа до 20 минут в день, включая исправление ошибок. Руководитель получает отчёты из одного источника, а просрочки по платежам видны сразу, что усиливает контроль роялти.</dd>
+          </dl>
+          <dl data-lang="en">
+            <dt>Goal</dt><dd>Figures on sales, Russian and international marketing, finance and active partners were gathered at a daily meeting of an hour or more, asking each department head separately.</dd>
+            <dt>What I did</dt><dd>Used AI to build a unified Google Sheets dashboard that automatically pulls data from 4 departments' spreadsheets, with built-in checks that flag missing dates in sales records and overdue partner payments.</dd>
+            <dt>Result</dt><dd>Compiling figures went from an hour to 20 minutes a day, including fixing errors. Management gets reports from a single source, and overdue payments surface immediately, strengthening royalty control.</dd>
           </dl>
         </div>
       </article>
@@ -338,7 +358,7 @@
           <dl data-lang="ru">
             <dt>Задача</dt><dd>Привлечь аудиторию и перевести её в клиентов через Telegram и поиск.</dd>
             <dt>Что сделала</dt><dd>Вела Telegram-канал, готовила SEO-адаптированные статьи для Дзена, анализировала эффективность контента и корректировала стратегию.</dd>
-            <dt>Результат</dt><dd>+243% подписчиков в Telegram, продажи выросли в 2,5 раза за 9 месяцев.</dd>
+            <dt>Результат</dt><dd>+243% подписчиков в Telegram, вклад в рост продаж в 2,5 раза за 9 месяцев.</dd>
           </dl>
           <dl data-lang="en">
             <dt>Goal</dt><dd>Grow the audience and convert it into customers via Telegram and search.</dd>
@@ -361,13 +381,17 @@
           <span class="tl-role" data-lang="ru">Бизнес-ассистент</span><span class="tl-role" data-lang="en">Business Assistant</span>
           <span class="tl-company">Clean Clinic</span>
         </div>
+        <div class="tl-about" data-lang="ru">Международная сеть клиник инфузионной терапии, развивается по франшизе: 52 действующих партнёра.</div>
+        <div class="tl-about" data-lang="en">International network of IV therapy clinics growing through franchising; 52 active partners.</div>
         <div class="tl-dates" data-lang="ru">Апрель 2026 — настоящее время</div>
         <div class="tl-dates" data-lang="en">April 2026 — Present</div>
         <ul class="tl-bullets">
+          <li data-lang="ru">Наладила контроль роялти по сети из <strong>52 партнёров</strong>: сверка «План/Факт», выявление просрочек, работа с бухгалтером, отчёты руководителю. Поступления выросли <strong>со 100 до 300 тыс. ₽ в месяц</strong>.</li>
+          <li data-lang="en">Set up royalty control across a network of <strong>52 partners</strong>: Plan vs. Actual reconciliation, overdue tracking, coordination with the accountant, reports to management. Collections grew <strong>from RUB 100K to 300K per month</strong>.</li>
+          <li data-lang="ru">С помощью AI построила в Google Sheets <strong>единый дашборд</strong> по 4 отделам с автоматической подсветкой пропущенных данных и просроченных платежей. Сбор цифр для руководителя сократился <strong>с часа до 20 минут в день</strong>.</li>
+          <li data-lang="en">Used AI to build a <strong>unified Google Sheets dashboard</strong> across 4 departments that automatically flags missing data and overdue payments. Compiling figures for management went <strong>from an hour to 20 minutes a day</strong>.</li>
           <li data-lang="ru">Выстроила регулярный контроль задач между <strong>5 отделами</strong> (продажи, запуск, партнёрское сопровождение, HR, медицинское направление) в Bitrix24: у каждой задачи есть ответственный и срок.</li>
           <li data-lang="en">Built a regular task-control process across <strong>5 departments</strong> (Sales, Launch, Partner Support, HR, Medical) in Bitrix24, with an owner and deadline for every task.</li>
-          <li data-lang="ru">Наладила контроль роялти партнёрской сети: сверка «План/Факт», выявление просрочек, работа с бухгалтером, отчёты руководителю. Поступления выросли <strong>со 100 до 300 тыс. ₽ в месяц</strong>.</li>
-          <li data-lang="en">Set up royalty control for the partner network: Plan vs. Actual reconciliation, overdue tracking, coordination with the accountant, reports to management. Collections grew <strong>from RUB 100K to 300K per month</strong>.</li>
           <li data-lang="ru">Организую встречи отделов и медицинского направления: собираю запросы, фиксирую договорённости и перевожу их в конкретные задачи.</li>
           <li data-lang="en">Run meetings between departments and the medical team: collect requests, record decisions and turn them into concrete tasks.</li>
           <li data-lang="ru">Веду и актуализирую реестры партнёров, проверяю корректность данных.</li>
@@ -387,14 +411,12 @@
         <div class="tl-dates" data-lang="ru">Ноябрь 2023 — настоящее время, с апреля 2026 частичная занятость</div>
         <div class="tl-dates" data-lang="en">November 2023 — Present, part-time since April 2026</div>
         <ul class="tl-bullets">
-          <li data-lang="ru">Провела аналитику рынков недвижимости Дубая и Барселоны и подготовила инвестиционные отчёты, которые легли в основу высокобюджетных сделок компании.</li>
-          <li data-lang="en">Researched the Dubai and Barcelona real estate markets and prepared investment reports that informed the company's high-budget deals.</li>
-          <li data-lang="ru">Инициировала переговоры и участвовала в заключении партнёрских соглашений с <strong>7 новыми инвестиционными проектами</strong>.</li>
-          <li data-lang="en">Initiated negotiations and helped close partnership agreements with <strong>7 new investment projects</strong>.</li>
-          <li data-lang="ru">Организовала <strong>20+ встреч</strong> с ключевыми партнёрами и предпринимателями, ускорив выход на сделки.</li>
-          <li data-lang="en">Organized <strong>20+ meetings</strong> with key partners and entrepreneurs, accelerating deal flow.</li>
-          <li data-lang="ru">Вела личные и деловые поручения собственника, освобождая его время для стратегических задач.</li>
-          <li data-lang="en">Managed personal and business tasks for the owner, freeing up time for strategic priorities.</li>
+          <li data-lang="ru">Подготовила аналитику рынков недвижимости Дубая и Барселоны и инвестиционные отчёты для собственника.</li>
+          <li data-lang="en">Researched the Dubai and Barcelona real estate markets and prepared investment reports for the owner.</li>
+          <li data-lang="ru">Организовала 20+ встреч с партнёрами и основателями проектов, участвовала в переговорах с 7 инвестиционными проектами.</li>
+          <li data-lang="en">Organized 20+ meetings with partners and founders; took part in negotiations with 7 investment projects.</li>
+          <li data-lang="ru">Сейчас: поручения собственника — логистика документов и доставок, подборка мероприятий для Telegram-канала.</li>
+          <li data-lang="en">Currently: tasks for the owner, including document and delivery logistics and event curation for a Telegram channel.</li>
         </ul>
       </div>
 
@@ -403,7 +425,7 @@
           <span class="tl-role" data-lang="ru">Ассистент коммерческого директора</span><span class="tl-role" data-lang="en">Assistant to Commercial Director</span>
           <span class="tl-company">INMYROOM</span>
         </div>
-        <div class="tl-dates" data-lang="ru">Октябрь 2023 — Январь 2025, частичная занятость</div>
+        <div class="tl-dates" data-lang="ru">Октябрь 2023 — январь 2025, частичная занятость</div>
         <div class="tl-dates" data-lang="en">October 2023 — January 2025, part-time</div>
         <ul class="tl-bullets">
           <li data-lang="ru">Автоматизировала в Excel и Google Sheets трекинг KPI, бюджета и загрузки сотрудников для коммерческого директора.</li>
@@ -424,7 +446,7 @@
           <span class="tl-role" data-lang="ru">SMM-менеджер</span><span class="tl-role" data-lang="en">SMM Manager</span>
           <span class="tl-company">PlatiRublem.ru</span>
         </div>
-        <div class="tl-dates" data-lang="ru">Январь 2024 — Февраль 2025, частичная занятость</div>
+        <div class="tl-dates" data-lang="ru">Январь 2024 — февраль 2025, частичная занятость</div>
         <div class="tl-dates" data-lang="en">January 2024 — February 2025, part-time</div>
         <ul class="tl-bullets">
           <li data-lang="ru">Вела Telegram-канал PlatiRublem: <strong>+243% подписчиков</strong>.</li>
@@ -441,7 +463,7 @@
           <span class="tl-role" data-lang="ru">Делопроизводитель</span><span class="tl-role" data-lang="en">Administrative Assistant</span>
           <span class="tl-company" data-lang="ru">Университет ИТМО</span><span class="tl-company" data-lang="en">ITMO University</span>
         </div>
-        <div class="tl-dates" data-lang="ru">Сентябрь 2022 — Декабрь 2023</div>
+        <div class="tl-dates" data-lang="ru">Сентябрь 2022 — декабрь 2023</div>
         <div class="tl-dates" data-lang="en">September 2022 — December 2023</div>
         <ul class="tl-bullets">
           <li data-lang="ru">Разработала контент-стратегию для ВК-группы «Ты нужен людям»: <strong>+25% подписчиков, +30% активности</strong>.</li>
@@ -486,6 +508,8 @@
         <h3 data-lang="ru">AI и автоматизация</h3><h3 data-lang="en">AI &amp; automation</h3>
         <div class="tag-list">
           <span class="tag">ChatGPT</span><span class="tag">Claude</span>
+          <span class="tag" data-lang="ru">AI-дашборды</span><span class="tag" data-lang="en">AI-built dashboards</span>
+          <span class="tag" data-lang="ru">Автосверка данных</span><span class="tag" data-lang="en">Automated data checks</span>
           <span class="tag" data-lang="ru">Автоматизация отчётности</span><span class="tag" data-lang="en">Reporting automation</span>
           <span class="tag" data-lang="ru">Базовый Python и SQL</span><span class="tag" data-lang="en">Basic Python &amp; SQL</span>
           <span class="tag" data-lang="ru">Работа с данными</span><span class="tag" data-lang="en">Data workflows</span>
@@ -500,20 +524,20 @@
         </div>
       </div>
       <div class="skill-card">
+        <h3 data-lang="ru">Языки</h3><h3 data-lang="en">Languages</h3>
+        <div class="tag-list">
+          <span class="tag" data-lang="ru">Русский — родной</span><span class="tag" data-lang="en">Russian — native</span>
+          <span class="tag" data-lang="ru">Английский — B2</span><span class="tag" data-lang="en">English — B2 (Upper-Intermediate)</span>
+          <span class="tag" data-lang="ru">Немецкий — базовый</span><span class="tag" data-lang="en">German — basic</span>
+        </div>
+      </div>
+      <div class="skill-card">
         <h3 data-lang="ru">Контент и коммуникации</h3><h3 data-lang="en">Content &amp; communications</h3>
         <div class="tag-list">
           <span class="tag" data-lang="ru">Копирайтинг и редактура</span><span class="tag" data-lang="en">Copywriting &amp; editing</span>
           <span class="tag" data-lang="ru">Контент-стратегии</span><span class="tag" data-lang="en">Content strategy</span>
           <span class="tag" data-lang="ru">SEO-оптимизация</span><span class="tag" data-lang="en">SEO optimization</span>
           <span class="tag" data-lang="ru">Telegram-каналы</span><span class="tag" data-lang="en">Telegram channels</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <h3 data-lang="ru">Языки</h3><h3 data-lang="en">Languages</h3>
-        <div class="tag-list">
-          <span class="tag" data-lang="ru">Русский — родной</span><span class="tag" data-lang="en">Russian — native</span>
-          <span class="tag" data-lang="ru">Английский</span><span class="tag" data-lang="en">English</span>
-          <span class="tag" data-lang="ru">Немецкий — базовый</span><span class="tag" data-lang="en">German — basic</span>
         </div>
       </div>
     </div>
